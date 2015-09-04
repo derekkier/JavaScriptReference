@@ -60,7 +60,7 @@
 
 			function()
 			{
-			document.getElementById('formContainer').innerHTML='<form> <textarea id="special_instructions"></textarea> <textarea id="special_instructions2"></textarea></form>';
+				document.getElementById('formContainer').innerHTML='<form> <textarea id="special_instructions"></textarea></form>';
 			}
 		);
 		

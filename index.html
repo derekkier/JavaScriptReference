@@ -16,44 +16,8 @@
 		<button id="updateIframeFormValue">Update Element</button>	
 	</body>
 	<script>
-		( function()
-		{
-		if( window.intervalSpecialInstructions === undefined )
-		{
-			console.log('intervalSpecialInstructions is undefined');
-			var num = 0;
-			var strTable = 'Table9';
-			var elementSpecialInstructions = document.getElementById('special_instructions'); 
-			var specialInstructionsText;
-			var regExpForTable = new RegExp('^'+strTable+'\\s+', 'gi');	
-			window.intervalSpecialInstructions = setInterval( 
-				function()
-				{
-					elementSpecialInstructions = document.getElementById('special_instructions'); 
-					num++; 
-					console.log(num); 
-					console.log( typeof(elementSpecialInstructions ) ); 
-					console.log( elementSpecialInstructions  );
-					//elementSpecialInstructions.value="test";	
-					if( typeof( elementSpecialInstructions ) == 'object' &&  elementSpecialInstructions === null )
-					{
-						console.log('elementSpecialInstructions does not exist yet.');		
-					}
-					else
-					{
-						specialInstructionsText = elementSpecialInstructions.value; 
+		( function() { if( window.intervalSpecialInstructions === undefined ) { console.log('intervalSpecialInstructions is undefined'); var strTable = 'Table9'; var elementSpecialInstructions = document.getElementById('special_instructions'); var specialInstructionsText; var regExpForTable = new RegExp('^'+strTable+'\\s+', 'gi');	window.intervalSpecialInstructions = setInterval( function() { elementSpecialInstructions = document.getElementById('special_instructions'); console.log( typeof(elementSpecialInstructions ) ); console.log( elementSpecialInstructions  ); //elementSpecialInstructions.value="test";	if( typeof( elementSpecialInstructions ) == 'object' &&  elementSpecialInstructions === null ) { console.log('elementSpecialInstructions does not exist yet.');		} else { specialInstructionsText = elementSpecialInstructions.value; if( specialInstructionsText.match(regExpForTable) ===null) { elementSpecialInstructions.value=strTable+' '+specialInstructionsText; } console.log('elementSpecialInstructions exists');		} } , 2000); } })();
 
-						if( specialInstructionsText.match(regExpForTable) ===null)
-						{
-							elementSpecialInstructions.value=strTable+' '+specialInstructionsText;
-						}
-
-						console.log('elementSpecialInstructions exists');		
-					}
-				} , 2000);
-
-		}
-		})();
 		console.log( typeof window.intervalSpecialInstructions );
 		
 		document.getElementById('showForm').addEventListener('click',
